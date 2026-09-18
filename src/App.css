@@ -761,3 +761,60 @@ html, body, #root {
   }
 }
 
+/* NEW ITEM JUST FOR TESTING */
+/* --- Responsive Fixes for Mobile / Small Screens --- */
+@media screen and (max-width: 768px) {
+  /* Prevent horizontal overflow on mobile */
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .app-container {
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Navbar adjustment */
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .role-switch-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Landing cards stack vertically */
+  .portal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Admin & Customer grid items stack vertically */
+  .admin-wrapper, .customer-wrapper, .shopkeeper-wrapper {
+    padding: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .admin-wrapper > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  .customer-grid, .shopkeeper-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  /* Card paddings and widths */
+  .card {
+    width: 100% !important;
+    box-sizing: border-box;
+    padding: 1rem !important;
+  }
+}
