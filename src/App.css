@@ -1,5 +1,5 @@
 /* =========================================
-   Clean & Modern Light Theme
+    Clean & Modern Light Theme (Full Width Fix)
    ========================================= */
 :root {
   --bg-color: #f8fafc;
@@ -20,16 +20,25 @@
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
+html, body, #root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-color);
   color: var(--text-primary);
-  min-height: 100vh;
 }
 
 .app-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100% !important;
+  background-color: #f1f5f9;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  margin: 0;
 }
 
 /* Navbar */
@@ -42,6 +51,7 @@ body {
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   width: 100%;
+  max-width: 100% !important;
 }
 
 .logo-container {
@@ -103,12 +113,10 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  padding: 1.5rem;
   width: 100%;
+  max-width: 100% !important;
+  box-sizing: border-box;
 }
 
 .badge {
@@ -147,6 +155,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   width: 100%;
+  max-width: 100% !important;
 }
 
 .portal-card {
@@ -187,6 +196,7 @@ body {
 /* Page Workspace View */
 .page-view {
   width: 100%;
+  max-width: 100% !important;
   padding: 2.5rem;
   background: var(--card-bg);
   border-radius: 14px;
@@ -213,11 +223,12 @@ body {
 }
 
 /* =========================================
-   Shopkeeper Workspace Layout & Dashboard
+    Shopkeeper Workspace Layout & Dashboard
    ========================================= */
 
 .shopkeeper-wrapper {
   width: 100%;
+  max-width: 100% !important;
   text-align: left;
 }
 
@@ -233,17 +244,20 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: 100%;
+  max-width: 100% !important;
 }
 
 .card {
-  background: var(--card-bg);
-  padding: 1.75rem;
-  border-radius: 14px;
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
@@ -422,13 +436,13 @@ body {
   padding-top: 1.25rem;
 }
 
-
 /* =========================================
-   Customer Workspace & Gemini Style Layout
+    Customer Workspace & Gemini Style Layout
    ========================================= */
 
 .customer-wrapper {
   width: 100%;
+  max-width: 100% !important;
   text-align: left;
 }
 
@@ -444,6 +458,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   width: 100%;
+  max-width: 100% !important;
 }
 
 .chat-card-container {
@@ -505,7 +520,7 @@ body {
 
 /* Gemini Style Input Bar Wrapper inside Card */
 .gemini-input-wrapper {
-  margin-top: 1rem;
+  margin-top: 1.0rem;
   border-top: 1px solid var(--border-color);
   padding-top: 1rem;
 }
@@ -633,7 +648,7 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   background-color: #ffffff;
-  color:black;
+  color: black;
   border: 1px solid var(--border-color);
   border-radius: 6px;
   cursor: pointer;
@@ -643,19 +658,6 @@ body {
 
 .status-toggle-btn:hover {
   background-color: #f1f5f9;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .portal-grid,
-  .shopkeeper-grid,
-  .customer-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .navbar {
-    padding: 1rem 1.5rem;
-  }
 }
 
 /* Circular Purchased Checkbox Style */
@@ -675,125 +677,87 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* new */
-/* --- Chic & Advanced Tracker UI Styling --- */
-
-.advanced-tracker-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
-  padding: 1.5rem;
-}
-
-.tracker-header {
+/* =========================================
+    Map Modal & Overlay Styles
+   ========================================= */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.live-indicator {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.1);
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-}
-
-.product-tracker-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin-top: 1rem;
-}
-
-.chic-tracker-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem 1.1rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-}
-
-.chic-tracker-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-  border-color: #cbd5e1;
-}
-
-/* Status Left Border Accents */
-.chic-tracker-item.yellow-status {
-  border-left: 4px solid #f59e0b;
-}
-
-.chic-tracker-item.red-status {
-  border-left: 4px solid #ef4444;
-}
-
-.chic-tracker-item.purchased-active {
-  border-left: 4px solid #10b981;
-  background: #f0fdf4;
-  opacity: 0.85;
-}
-
-.item-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-}
-
-.item-info strong {
-  font-size: 0.95rem;
-  color: #1e293b;
-  font-weight: 600;
-}
-
-.store-meta {
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-/* Chic Toggle Button (Transitions smoothly between pill & circular checkbox) */
-.chic-toggle-btn {
-  background: #f1f5f9;
-  color: #475569;
-  border: 1px solid #cbd5e1;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
-.chic-toggle-btn:hover {
-  background: #e2e8f0;
-  color: #0f172a;
+.modal-content {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-color);
+  position: relative;
+  text-align: left;
 }
 
-/* When checked: Turns into a cute circular green tick box */
-.chic-toggle-btn.checked {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border-radius: 50%;
-  background: #10b981;
-  color: #ffffff;
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.modal-close-btn {
+  background: transparent;
   border: none;
-  font-size: 14px;
-  box-br: 0 4px 10px rgba(16, 185, 129, 0.3);
-  transform: scale(1.05);
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
 }
+
+.modal-close-btn:hover {
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+}
+
+.map-container-box {
+  width: 100%;
+  height: 350px;
+  background-color: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .portal-grid,
+  .shopkeeper-grid,
+  .customer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+}
+
