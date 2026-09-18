@@ -532,7 +532,7 @@ function App() {
                   position: 'relative' 
                 }}> 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}> 
-                    <h2 style={{ fontSize: '1.4rem', fontWeight: 'bold' }}>📍 Live Registered Shops Across India</h2> 
+                    <h2 style={{ fontSize: '1.4rem', fontWeight: 'bold', color:'black' }}>📍 Live Registered Shops Across India</h2> 
                     <button  
                       type="button" 
                       onClick={() => setIsMapModalOpen(false)} 
